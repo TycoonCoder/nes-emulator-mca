@@ -1,0 +1,31 @@
+name: MakeCode Arcade Release
+
+on: 
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: install node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install makecode
+        run: |
+          npm install -g pxt
+          pxt target arcade
+      - name: build js
+        run: |
+          pxt clean
+          pxt install
+          pxt build --cloud

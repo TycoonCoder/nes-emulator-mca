@@ -1,0 +1,24 @@
+{
+ "name": "NES Emulator",
+ "description": "NES emulator for MakeCode Arcade - supports Mapper 0 (NROM) and Mapper 1 (MMC1)",
+ "dependencies": {
+  "device": "*"
+ },
+ "files": [
+  "main.ts",
+  "nes-emulator.ts",
+  "rom-data.ts",
+  "README.md"
+ ],
+ "testFiles": [
+  "test.ts"
+ ],
+ "targetVersions": {
+  "target": "2.0.62",
+  "targetId": "arcade"
+ },
+ "supportedTargets": [
+  "arcade"
+ ],
+ "preferredEditor": "prj"
+}
